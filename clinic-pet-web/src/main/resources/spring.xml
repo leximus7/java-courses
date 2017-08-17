@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="ru.alebedev.javacourse.models.User"/>
+    <bean id="hibernateStorage" class="ru.alebedev.javacourse.store.HibernateStorage"/>
+
+    <bean id="userCache" class="ru.alebedev.javacourse.store.UserCache">
+        <constructor-arg ref="hibernateStorage"/>
+    </bean>
+
+
+</beans>
